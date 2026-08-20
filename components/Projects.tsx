@@ -1,213 +1,429 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
-import { ExternalLink, Code2 } from "lucide-react";
+import {
+  ArrowRight,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
+import { useRef } from "react";
 
 const projects = [
   {
     title: "PickleRank",
     category: "🏆 Full-Stack Platform",
-    image: "/projects/picklerank.jpg",
+    image: "/projects/picklerank.png",
     description:
-      "A modern tournament management platform built for pickleball organizations to manage players, tournaments, match results, and live rankings.",
-
-    features: [
-      "Tournament Management",
-      "Player Profiles",
-      "Authentication",
-      "Live Rankings",
-    ],
-
+      "A modern tournament management platform for organizing players, tournaments, matches, and live rankings.",
     stack: [
       "Next.js",
       "TypeScript",
+      "NestJS",
       "PostgreSQL",
       "Prisma",
-      "Tailwind CSS",
     ],
+    href: "/projects/picklerank",
+  },
 
-    github: "#",
-    demo: "#",
+  {
+    title: "Splitly",
+    category: "📱 Mobile App Development",
+    image: "/projects/splitly.png",
+    description:
+      "A Flutter-based expense management app for groups, shared expenses, balances, settlements, budgets, and analytics.",
+    stack: [
+      "Flutter",
+      "Dart",
+      "Firebase",
+      "Firestore",
+    ],
+    href: "/projects/splitly",
   },
 
   {
     title: "Brew Haven",
     category: "☕ Frontend Development",
-    image: "/projects/brew-haven.jpg",
+    image: "/projects/brewhaven.png",
     description:
-      "A premium coffee shop website showcasing responsive layouts, smooth animations, and modern frontend development.",
-
-    features: [
-      "Responsive Design",
-      "Interactive UI",
-      "Smooth Animations",
-      "Mobile Optimized",
-    ],
-
+      "A responsive coffee shop website featuring modern UI, smooth interactions, and mobile-friendly design.",
     stack: [
       "HTML",
       "CSS",
       "JavaScript",
       "Responsive Design",
     ],
-
-    github: "#",
-    demo: "#",
+    href: "/projects/brew-haven",
   },
 
   {
     title: "TAP-JEEP",
-    category: "🚍 Computer Engineering",
-    image: "/projects/tap-jeep.jpg",
+    category: "🚍 Computer Engineering Capstone",
+    image: "/projects/tapjeep.jpg",
     description:
-      "A smart transportation fare collection system using RFID, GPS, Flutter, and Firebase for automated public transportation.",
-
-    features: [
-      "RFID Authentication",
-      "GPS Fare Calculation",
-      "Flutter Mobile App",
-      "Firebase",
-    ],
-
+      "A smart transportation and automated fare collection system integrating RFID, GPS, mobile applications, Firebase, and embedded hardware.",
     stack: [
-      "Arduino",
-      "RFID",
-      "Flutter",
+      "FlutterFlow",
+      "Dart",
       "Firebase",
+      "Arduino Mega",
+      "RFID",
+      "GPS",
     ],
-
-    github: "#",
-    demo: "#",
+    href: "/projects/tap-jeep",
   },
 ];
 
 export default function Projects() {
-  return (
-    <section id="projects" className="py-32 px-6">
-      <div className="max-w-7xl mx-auto">
+  const sliderRef = useRef<HTMLDivElement>(null);
 
+  const scrollLeft = () => {
+    sliderRef.current?.scrollBy({
+      left: -480,
+      behavior: "smooth",
+    });
+  };
+
+  const scrollRight = () => {
+    sliderRef.current?.scrollBy({
+      left: 480,
+      behavior: "smooth",
+    });
+  };
+
+  return (
+    <section
+      id="projects"
+      className="overflow-hidden px-6 py-24 md:py-32"
+    >
+      <div className="mx-auto max-w-7xl">
+
+        {/* Section Label */}
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-indigo-400 tracking-[0.3em] uppercase text-sm"
+          transition={{ duration: 0.45 }}
+          className="
+            text-sm
+            uppercase
+            tracking-[0.3em]
+            text-indigo-400
+          "
         >
           03 / PROJECTS
         </motion.p>
 
-        <motion.h2
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mt-6 text-4xl md:text-6xl font-bold"
+        {/* Header */}
+        <div
+          className="
+            mt-5
+            flex
+            flex-col
+            gap-6
+            md:flex-row
+            md:items-end
+            md:justify-between
+          "
         >
-          Projects
-        </motion.h2>
+          <div>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="
+                text-4xl
+                font-bold
+                tracking-tight
+                md:text-6xl
+              "
+            >
+              Projects
+            </motion.h2>
 
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
-          className="mt-6 max-w-3xl text-lg text-gray-400 leading-relaxed"
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.5,
+                delay: 0.08,
+              }}
+              className="
+                mt-6
+                max-w-3xl
+                text-base
+                leading-relaxed
+                text-gray-400
+                md:text-lg
+              "
+            >
+              A collection of software, web, mobile, and computer
+              engineering projects showcasing my experience in building
+              modern and user-focused technology solutions.
+            </motion.p>
+          </div>
+
+          {/* Desktop Controls */}
+          <div className="hidden shrink-0 gap-3 sm:flex">
+            <button
+              type="button"
+              onClick={scrollLeft}
+              aria-label="Previous projects"
+              className="
+                flex
+                h-12
+                w-12
+                items-center
+                justify-center
+                rounded-full
+                border
+                border-white/10
+                bg-white/[0.04]
+                text-white
+                transition
+                duration-200
+                hover:border-indigo-500/40
+                hover:bg-white/[0.08]
+              "
+            >
+              <ChevronLeft size={23} />
+            </button>
+
+            <button
+              type="button"
+              onClick={scrollRight}
+              aria-label="Next projects"
+              className="
+                flex
+                h-12
+                w-12
+                items-center
+                justify-center
+                rounded-full
+                border
+                border-white/10
+                bg-white/[0.04]
+                text-white
+                transition
+                duration-200
+                hover:border-indigo-500/40
+                hover:bg-white/[0.08]
+              "
+            >
+              <ChevronRight size={23} />
+            </button>
+          </div>
+        </div>
+
+        {/* Project Carousel */}
+        <div
+          ref={sliderRef}
+          className="
+            mt-16
+            flex
+            snap-x
+            snap-mandatory
+            gap-6
+            overflow-x-auto
+            scroll-smooth
+            pb-6
+            [scrollbar-width:none]
+            [&::-webkit-scrollbar]:hidden
+          "
         >
-          A selection of software, web, and computer engineering projects
-          showcasing my skills in full-stack development, frontend
-          engineering, and embedded systems.
-        </motion.p>
-
-        <div className="mt-20 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
-
           {projects.map((project, index) => (
             <motion.article
               key={project.title}
-              initial={{ opacity: 0, y: 60 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.15 }}
-              whileHover={{
-                y: -10,
-                transition: { duration: 0.25 },
+              initial={{
+                opacity: 0,
+                y: 25,
               }}
-              className="group overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl hover:border-indigo-500/40 hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-300"
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+              viewport={{
+                once: true,
+                amount: 0.15,
+              }}
+              transition={{
+                duration: 0.4,
+                delay: index * 0.05,
+              }}
+              className="
+                w-[88vw]
+                shrink-0
+                snap-start
+                sm:w-[430px]
+                lg:w-[470px]
+              "
             >
-              <div className="overflow-hidden">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  width={1200}
-                  height={700}
-                  className="w-full h-60 object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-              </div>
+              <Link
+                href={project.href}
+                className="
+                  group
+                  flex
+                  h-full
+                  min-h-[560px]
+                  flex-col
+                  overflow-hidden
+                  rounded-3xl
+                  border
+                  border-white/10
+                  bg-white/[0.04]
+                  transition
+                  duration-300
+                  hover:-translate-y-1
+                  hover:border-indigo-500/40
+                  hover:bg-white/[0.06]
+                "
+              >
+                {/* Project Image */}
+                <div
+                  className="
+                    relative
+                    h-[260px]
+                    w-full
+                    overflow-hidden
+                    bg-black
+                    sm:h-[280px]
+                  "
+                >
+                  <Image
+                    src={project.image}
+                    alt={`${project.title} project preview`}
+                    fill
+                    sizes="(max-width: 640px) 88vw, 470px"
+                    className="
+                      object-cover
+                      object-top
+                      transition-transform
+                      duration-500
+                      group-hover:scale-[1.03]
+                    "
+                  />
 
-              <div className="p-8">
+                  <div
+                    className="
+                      pointer-events-none
+                      absolute
+                      inset-0
+                      bg-gradient-to-t
+                      from-black/25
+                      via-transparent
+                      to-transparent
+                    "
+                  />
+                </div>
 
-                <span className="inline-flex rounded-full bg-indigo-500/10 px-3 py-1 text-sm text-indigo-400 border border-indigo-500/20">
-                  {project.category}
-                </span>
+                {/* Project Content */}
+                <div
+                  className="
+                    flex
+                    flex-1
+                    flex-col
+                    p-6
+                    md:p-8
+                  "
+                >
+                  <span
+                    className="
+                      text-sm
+                      font-medium
+                      text-indigo-400
+                    "
+                  >
+                    {project.category}
+                  </span>
 
-                <h3 className="mt-5 text-3xl font-bold">
-                  {project.title}
-                </h3>
+                  <h3
+                    className="
+                      mt-3
+                      text-2xl
+                      font-bold
+                      md:text-3xl
+                    "
+                  >
+                    {project.title}
+                  </h3>
 
-                <p className="mt-4 text-gray-400 leading-relaxed">
-                  {project.description}
-                </p>
+                  <p
+                    className="
+                      mt-4
+                      leading-relaxed
+                      text-gray-400
+                    "
+                  >
+                    {project.description}
+                  </p>
 
-                <div className="mt-6 space-y-3">
-                  {project.features.map((feature) => (
+                  {/* Tech Stack */}
+                  <div className="mt-6 flex flex-wrap gap-2">
+                    {project.stack.map((tech) => (
+                      <span
+                        key={tech}
+                        className="
+                          rounded-full
+                          border
+                          border-white/10
+                          bg-white/[0.05]
+                          px-3
+                          py-1.5
+                          text-xs
+                          text-gray-300
+                          md:text-sm
+                        "
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Case Study */}
+                  <div className="mt-auto pt-8">
                     <div
-                      key={feature}
-                      className="flex items-center gap-3 text-gray-300"
+                      className="
+                        flex
+                        items-center
+                        gap-2
+                        font-medium
+                        text-indigo-400
+                      "
                     >
-                      <span className="text-green-400 font-bold">✓</span>
-                      {feature}
+                      View Case Study
+
+                      <ArrowRight
+                        size={18}
+                        className="
+                          transition-transform
+                          duration-300
+                          group-hover:translate-x-1
+                        "
+                      />
                     </div>
-                  ))}
+                  </div>
                 </div>
-
-                <div className="mt-8 flex flex-wrap gap-2">
-                  {project.stack.map((skill) => (
-                    <span
-                      key={skill}
-                      className="rounded-full border border-white/10 bg-white/10 px-3 py-2 text-sm"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-
-                <div className="mt-8 flex gap-3">
-
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-white py-3 font-medium text-black transition hover:scale-105"
-                  >
-                    <Code2 size={18} />
-                    GitHub
-                  </a>
-
-                  <a
-                    href={project.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex flex-1 items-center justify-center gap-2 rounded-xl border border-white/20 py-3 transition hover:bg-white/10"
-                  >
-                    <ExternalLink size={18} />
-                    Live Demo
-                  </a>
-
-                </div>
-
-              </div>
+              </Link>
             </motion.article>
           ))}
-
         </div>
+
+        {/* Mobile Swipe Hint */}
+        <p
+          className="
+            mt-1
+            text-center
+            text-xs
+            text-gray-600
+            sm:hidden
+          "
+        >
+          Swipe to explore projects →
+        </p>
+
       </div>
     </section>
   );
