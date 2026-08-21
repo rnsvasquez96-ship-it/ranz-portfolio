@@ -132,7 +132,7 @@ export default function SplitlyPage() {
        title="Splitly"
        category="Mobile Expense Management Application"
           description="Splitly is a Flutter-based mobile application designed to simplify shared expense management. Users can organize groups, record shared expenses, track balances, manage budgets, analyze spending, and settle expenses through a clean and intuitive mobile experience."
-         image="/projects/picklerank.png"
+         image="/projects/splitly.png"
          github="https://github.com/rnsvasquez96-ship-it/splitly"
          demo="#"
          technologies={[

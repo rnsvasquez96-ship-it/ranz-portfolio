@@ -94,7 +94,7 @@ export default function BrewHavenPage() {
         title="Brew Haven"
         category="Frontend Coffee Shop Website"
         description="Brew Haven is a responsive coffee shop website designed to create a warm and modern digital experience. The project focuses on clean frontend development, responsive layouts, smooth interactions, and a polished visual presentation across different screen sizes."
-        image="/projects/brew-haven.jpg"
+        image="/projects/brewhaven.png"
         github={githubUrl}
         demo={demoUrl}
         technologies={[
