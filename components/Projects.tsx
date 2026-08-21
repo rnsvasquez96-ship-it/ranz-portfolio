@@ -28,6 +28,22 @@ const projects = [
   },
 
   {
+  title: "TicketFlow",
+  category: "🎫 Full-Stack Web Application",
+  image: "/projects/ticketflow.png",
+  description:
+    "A full-stack ticket management system for creating, tracking, prioritizing, and managing support requests through an organized workflow.",
+  stack: [
+    "Next.js",
+    "TypeScript",
+    "NestJS",
+    "PostgreSQL",
+    "Prisma",
+  ],
+  href: "/projects/ticketflow",
+},
+
+  {
     title: "Splitly",
     category: "📱 Mobile App Development",
     image: "/projects/splitly.png",

@@ -13,6 +13,11 @@ import {
   PiggyBank,
   ChartNoAxesCombined,
   History,
+  FileText,
+  Bot,
+  Mail,
+  TestTube2,
+  Workflow,
 } from "lucide-react";
 
 const icons = {
@@ -27,6 +32,11 @@ const icons = {
   PiggyBank,
   ChartNoAxesCombined,
   History,
+  FileText,
+  Bot,
+  Mail,
+  TestTube2,
+  Workflow,
 };
 
 export interface Feature {
