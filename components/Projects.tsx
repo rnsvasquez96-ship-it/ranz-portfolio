@@ -28,6 +28,22 @@ const projects = [
   },
 
   {
+  title: "Crown Gym",
+  category: "🏋️ Full-Stack Management System",
+  image: "/projects/crowngym.png",
+  description:
+    "A full-stack gym management system for managing members, memberships, trainers, check-ins, payments, and daily gym operations.",
+  stack: [
+    "Next.js",
+    "TypeScript",
+    "NestJS",
+    "PostgreSQL",
+    "Prisma",
+  ],
+  href: "/projects/crown-gym",
+},
+
+  {
   title: "TicketFlow",
   category: "🎫 Full-Stack Web Application",
   image: "/projects/ticketflow.png",

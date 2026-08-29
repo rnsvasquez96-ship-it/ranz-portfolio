@@ -279,7 +279,7 @@ export default function Hero() {
                 2000,
                 "Full-Stack Developer",
                 2000,
-                "QA Engineer & Software Tester",
+                "Quality Assurance Specialist",
                 2000,
                 "UI/UX Designer",
                 2000,
