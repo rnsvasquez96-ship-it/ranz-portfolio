@@ -18,6 +18,10 @@ import {
   Mail,
   TestTube2,
   Workflow,
+  Box,
+  Car,
+  Sparkles,
+  MonitorSmartphone,
 } from "lucide-react";
 
 const icons = {
@@ -37,6 +41,10 @@ const icons = {
   Mail,
   TestTube2,
   Workflow,
+  Box,
+  Car,
+  Sparkles,
+  MonitorSmartphone,
 };
 
 export interface Feature {
@@ -53,7 +61,6 @@ export default function Features({ features }: FeaturesProps) {
   return (
     <section className="px-6 py-24">
       <div className="mx-auto max-w-7xl">
-
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -124,7 +131,6 @@ export default function Features({ features }: FeaturesProps) {
             );
           })}
         </div>
-
       </div>
     </section>
   );
