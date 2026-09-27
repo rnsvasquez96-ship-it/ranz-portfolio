@@ -106,7 +106,8 @@ const gallery = [
 const githubUrl =
   "https://github.com/rnsvasquez96-ship-it/veloce-premium-car-rental";
 
-const demoUrl = "";
+const demoUrl =
+  "https://veloce-premium-car-rental-phi.vercel.app/";
 
 export default function VelocePage() {
   return (

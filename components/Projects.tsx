@@ -44,6 +44,22 @@ const projects = [
 },
 
   {
+  title: "Veloce",
+  category: "🏎️ Interactive 3D Web Experience",
+  image: "/projects/veloce.png",
+  description:
+    "A cinematic premium car rental experience featuring interactive 3D vehicles, motion-driven storytelling, responsive fleet browsing, and a simulated reservation flow.",
+  stack: [
+    "Next.js",
+    "TypeScript",
+    "Three.js",
+    "React Three Fiber",
+    "GSAP",
+  ],
+  href: "/projects/veloce",
+},
+
+  {
   title: "TicketFlow",
   category: "🎫 Full-Stack Web Application",
   image: "/projects/ticketflow.png",
@@ -89,21 +105,6 @@ const projects = [
     href: "/projects/brew-haven",
   },
 
-  {
-  title: "Veloce",
-  category: "🏎️ Interactive 3D Web Experience",
-  image: "/projects/veloce.png",
-  description:
-    "A cinematic premium car rental experience featuring interactive 3D vehicles, motion-driven storytelling, responsive fleet browsing, and a simulated reservation flow.",
-  stack: [
-    "Next.js",
-    "TypeScript",
-    "Three.js",
-    "React Three Fiber",
-    "GSAP",
-  ],
-  href: "/projects/veloce",
-},
 
   {
     title: "TAP-JEEP",
