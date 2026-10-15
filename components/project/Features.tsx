@@ -22,6 +22,11 @@ import {
   Car,
   Sparkles,
   MonitorSmartphone,
+  Map,
+  BedDouble,
+  Wrench,
+  Calculator,
+  Clock3,
 } from "lucide-react";
 
 const icons = {
@@ -45,6 +50,11 @@ const icons = {
   Car,
   Sparkles,
   MonitorSmartphone,
+  Map,
+  BedDouble,
+  Wrench,
+  Calculator,
+  Clock3,
 };
 
 export interface Feature {

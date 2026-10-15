@@ -22,7 +22,7 @@ const features: Feature[] = [
   },
   {
     title: "Cinematic Motion Design",
-    description:
+    description:  
       "Uses scroll-driven animation and motion effects to create a premium, cinematic presentation throughout the experience.",
     icon: "Sparkles",
   },

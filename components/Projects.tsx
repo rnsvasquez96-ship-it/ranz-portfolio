@@ -44,6 +44,22 @@ const projects = [
 },
 
   {
+  title: "AC Studio POS",
+  category: "📸 Private Client Project",
+  image: "/projects/acstudio.png",
+  description:
+    "A secure, iPad-friendly photo studio POS system built to replace handwritten order and payment records. It manages walk-ins, bookings, GCash downpayments, balances, add-ons, daily cash reconciliation, transaction history, printable reports, and attendant DTR.",
+  stack: [
+    "Next.js",
+    "TypeScript",
+    "Tailwind CSS",
+    "Supabase",
+    "PostgreSQL",
+  ],
+  href: "/projects/ac-studio-pos",
+},
+
+  {
   title: "Veloce",
   category: "🏎️ Interactive 3D Web Experience",
   image: "/projects/veloce.png",
@@ -57,6 +73,22 @@ const projects = [
     "GSAP",
   ],
   href: "/projects/veloce",
+},
+
+  {
+  title: "Silong",
+  category: "🏠 Full-Stack Dormitory Management System",
+  image: "/projects/silong.png",
+  description:
+    "A full-stack dormitory and bedspace management platform for managing rooms, beds, tenants, leases, billing, payments, maintenance, and role-based staff operations.",
+  stack: [
+    "Next.js",
+    "TypeScript",
+    "NestJS",
+    "PostgreSQL",
+    "Prisma",
+  ],
+  href: "/projects/silong",
 },
 
   {
